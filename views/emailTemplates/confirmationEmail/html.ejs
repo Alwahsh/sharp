@@ -1,4 +1,6 @@
 <p>Dear <%=recipientName%>,</p>
 <br/>
-<p><em>Thank you</em> for being a friend.</p>
-<p>Love,<br/><%=senderName%></p>
+<p>Please confirm your email by clicking the following link</p>
+<a href="localhost:1337/user/<%= id %>/confirm/<%= key %>">
+  localhost:1337/user/<%= id %>/confirm/<%= key %>
+</a>

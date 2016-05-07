@@ -55,15 +55,25 @@ module.exports = {
      sails.hooks.email.send(
        "confirmationEmail", {
          recipientName: this.first_name,
-         confirmation_token: this.confirmation_token
+         id: this.id,
+         key: this.confirmation_token
        }, {
          to: this.email,
+         from: "noreply@sharp_example.com",
          subject: "Please confirm your email"
        },
-       function(err) {
-         sails.log.warn(err);
-       }
+       function() {}
      );
+   },
+
+   confirm: function(key) {
+     if (!this.confirmed_at && key == this.confirmation_token) {
+       this.confirmed_at = Date();
+       this.save(function() {});
+       return true;
+     } else {
+       return false;
+     }
    }
 
   },
