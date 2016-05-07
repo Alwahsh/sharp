@@ -15,22 +15,17 @@ module.exports.passport = {
     strategy: require('passport-local').Strategy
   },
 
-  basic: {
-    strategy: require('passport-http').BasicStrategy,
-    protocol: 'basic'
-  },
-
-  /*
   google: {
     name: 'Google',
     protocol: 'oauth2',
     strategy: require('passport-google-oauth').OAuth2Strategy,
     options: {
-      clientID: 'your-client-id',
-      clientSecret: 'your-client-secret',
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       scope: ['profile', 'email']
     }
   }
+  /*
   twitter: {
     name: 'Twitter',
     protocol: 'oauth',
