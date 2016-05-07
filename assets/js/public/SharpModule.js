@@ -1,0 +1,1 @@
+angular.module('SharpModule', ['compareTo']);

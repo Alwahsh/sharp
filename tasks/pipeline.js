@@ -29,6 +29,9 @@ var jsFilesToInject = [
   'js/dependencies/sails.io.js',
 
   // Dependencies like jQuery, or Angular are brought in here
+  'js/dependencies/angular.min.js',
+  'js/dependencies/compareTo.module.js',
+  'js/public/SharpModule.js',
   'js/dependencies/**/*.js',
 
   // All of the rest of your client-side js files
@@ -71,5 +74,3 @@ module.exports.jsFilesToInject = jsFilesToInject.map(function(jsPath) {
 module.exports.templateFilesToInject = templateFilesToInject.map(function(tplPath) {
   return require('path').join('assets/',tplPath);
 });
-
-

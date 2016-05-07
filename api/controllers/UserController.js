@@ -40,6 +40,8 @@ module.exports = {
   },
 
   me: function (req, res) {
-    res.ok(req.user);
+    res.view({
+      user: req.user
+    });
   }
 };
