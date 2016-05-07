@@ -47,9 +47,24 @@ module.exports = {
     require_confirmation: function() {
      this.confirmation_token = randomstring.generate(); // Should better save a hashed version.
      this.confirmed_at = null;
-     // TODO: Send E-mail.
+     this.send_confirmation_email();
      this.save(function() {});
-    }
+   },
+
+   send_confirmation_email: function() {
+     sails.hooks.email.send(
+       "confirmationEmail", {
+         recipientName: this.first_name,
+         confirmation_token: this.confirmation_token
+       }, {
+         to: this.email,
+         subject: "Please confirm your email"
+       },
+       function(err) {
+         sails.log.warn(err);
+       }
+     );
+   }
 
   },
 
