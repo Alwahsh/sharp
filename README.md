@@ -20,7 +20,7 @@ Press "Create".
 
 You should see 2 values, ClientID and Client Secret, copy both values as you'd need them to start the server later.
 
-Install NodeJS and using a terminal go to the directory of the project.
+Install NodeJS and using a terminal go to the directory of the project. You can try running vagrant up instead of installing NodeJS and then do "cd /vagrant" and follow the same next steps.
 
 Run "npm install"
 

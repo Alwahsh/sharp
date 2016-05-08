@@ -70,8 +70,5 @@ Vagrant.configure(2) do |config|
     curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
     sudo apt-get install -y nodejs
     sudo npm -g install sails
-    cd /vagrant/
-    npm install
-    sails lift
   SHELL
 end
