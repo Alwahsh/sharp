@@ -39,9 +39,13 @@ module.exports = {
     });
   },
 
-  me: function (req, res) {
-    res.view({
-      user: req.user
-    });
+  me: function (req, res, next) {
+    if (req.user) {
+      res.view({
+        user: req.user
+      });
+    } else {
+      res.redirect('/');
+    }
   }
 };

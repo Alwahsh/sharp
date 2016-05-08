@@ -22,9 +22,10 @@ module.exports.passport = {
     options: {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      scope: ['profile', 'email']
+      scope: ['profile', 'email'],
+      callbackURL: '/auth/google/callback?next=/user/me'
     }
-  }
+  },
   /*
   twitter: {
     name: 'Twitter',
