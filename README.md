@@ -29,3 +29,5 @@ Here, you can put to use the ClientID and Client Secret you generated earlier.
 Run "GOOGLE_CLIENT_ID="Your Google Client ID" GOOGLE_CLIENT_SECRET="Your Google client secret" sails lift"
 
 Open your browser and visit "localhost:1337"
+
+Note, for the confirmation emails, no real emails are sent out. Instead, all emails that are to be sent are stored in ".tmp/email.txt". They contain a link to confirm the email which you should visit to activate the account you register.
